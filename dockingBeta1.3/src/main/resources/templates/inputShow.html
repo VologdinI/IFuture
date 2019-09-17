@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Yeah</title>
+    <meta charset="utf-8"/>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<!--Меню-->
+<form id="input" action="processFrom" method="post">
+    <label for="extension">Extension:</label><input id="extension" name="extension" type="text" value=".log"/>
+    <br/>
+    <label for="goalText">Text for finding:</label><input id="goalText" name="goalText" type="text" value=""/>
+    <br/>
+    <input type="submit" text="Submit to Armageddon"/>
+</form>
+
+<p><span id="errorMessage">Test</span></p></br>
+<p id="getTime"></p><br/>
+<p id="file3"></p><br/>
+<!--попробовать с изначально вставленным контейнером-->
+    <div id="realAjax">
+        <ul id="ulSubFoldersAndFiles100" class="table-tree" cellspacing="0">
+        </ul>
+    </div>
+<!--выбрать файл на диске-->
+<form action="testFindFileStuff"  enctype="multipart/form-data" method="post">
+    <p>Загрузите файл с картинкой</p>
+    <p><input type="file" name="pic"></p>
+</form>
+
+<script th:src="@{/js/jquery-3.3.1.js}"></script>
+<script th:src="@{/js/index.js}"></script>
+<!--<script src="../static/js/index.js"></script>-->
+</body>
+</html>
