@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Yeah</title>
+    <meta charset="utf-8"/>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--выбрать папку на сервере(диске)-->
+<form>
+    <input type="button" id="buttonServer" class="btn btn-outline-dark" value="Work with server repository" action="workWithServer" method="post">
+</form>
+<!--выбрать папку из сети-->
+<!--workWithNet-->
+<form>
+    <input type="button" id="buttonNet" class="btn btn-outline-primary" value="Work with GitHub repository" action="workWithNet" method="post">
+</form>
+<!--<form action="#" th:action="@{/workWithNet}" th:object="${Boolean}" method="post">
+    <input type="button" id="buttonNet" value="Work with GitHub repository">
+</form>-->
+<!--меню выбора папки из дерева-->
+
+
+<!--Меню-->
+// action="processFrom" method="post"
+<form id="input" >
+    <label for="extension">Extension:</label><input id="extension" name="extension" type="text" value=".log"/>
+    <br/>
+    <label for="goalText">Text for finding:</label><input id="goalText" name="goalText" type="text" value=""/>
+    <br/>
+    <button id="submitExtAndFiles" type="submit" class="btn btn-primary btn-lg">
+    <span id="load" class="spinner-grow spinner-grow-sm"></span>
+    Load data
+    </button>
+
+</form>
+
+<p id="getTime"></p><br/>
+<p id="file3"></p><br/>
+<!--попробовать с изначально вставленным контейнером-->
+    <div id="realAjax">
+        <ul id="ulSubFoldersAndFiles100" class="table-tree" cellspacing="0">
+        </ul>
+    </div>
+<!--выбрать файл на диске-->
+<form action="testFindFileStuff"  enctype="multipart/form-data" method="post">
+    <p>Загрузите файл с картинкой</p>
+    <p><input type="file" name="pic"></p>
+</form>
+
+<div id="divText">
+<div id="divTabFolder">
+</div>
+</div>
+
+<script th:src="@{/js/jquery-3.3.1.js}"></script>
+<script th:src="@{/js/index.js}"></script>
+<!--<script src="../static/js/index.js"></script>-->
+</body>
+</html>
