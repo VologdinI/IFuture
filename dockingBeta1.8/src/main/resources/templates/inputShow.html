@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <title>Log finder</title>
+    <meta charset="utf-8"/>
+    <!--<link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+
+    <div class="panel panel-default">
+        <div id="header" class="panel-heading">
+            <h1>Welcome to Log finder</h1>
+        </div>
+        <div class="panel-body">
+            <!--выбрать папку на сервере(диске)-->
+
+            <div class="col-md-4">
+                <form>
+                    <input type="button" id="buttonServer" class="btn btn-outline-dark" value="Work with server repository" action="workWithServer" method="post">
+                </form>
+            </div>
+            <!-- <div class="w-100"></div> --><!--разделительная штука в бутстрапе-->
+            <!--выбрать папку из сети-->
+            <div class="col-md-4">
+                <form>
+                    <input type="button" id="buttonNet" class="btn btn-outline-primary" value="Work with GitHub repository" action="workWithNet" method="post">
+                </form>
+            </div>
+            <div class="row col-md-8">
+                <div class="col-md-4">
+                    <form>
+                        <input type="button" id="buttonUser" class="btn btn-outline-primary" value="Work with your files" action="workWithNet" method="post" disabled="disabled">
+                    </form>
+                </div>
+                <!--выбрать файл на диске-->
+                <!--октрытие файлов через выбор папки-->
+                <div class="col-md-4">
+                    <form>
+                        <input type="file" id="files-input" class="btn btn-outline-success" value="Load your files for work" webkitdirectory directory multiple/>
+                    </form>
+                </div>
+            </div>
+
+            <!--Меню-->
+            <div id="divForm">
+                <form id="input" >
+                    <div class="form-group">
+                        <label for="extension">Extension:</label><input id="extension" class="form-control" name="extension" type="text" value=".log"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="goalText">Text for finding:</label><input id="goalText" class="form-control" name="goalText" type="text" value=""/>
+                    </div>
+                    <button id="submitTextAndFiles" type="submit" class="btn btn-primary btn-lg">
+                    <span id="load" class="spinner-grow spinner-grow-sm"></span>
+                    Load data
+                    </button>
+                </form>
+            </div>
+            <!--попробовать с изначально вставленным контейнером-->
+                <div id="realAjax">
+                    <ul id="ulSubFoldersAndFiles100" class="table-tree" cellspacing="0">
+                    </ul>
+                </div>
+
+
+            <div id="divText">
+                <div id="divTabFolder">
+                </div>
+            </div>
+
+
+
+            <!--реклама и ирония-->
+        <div class="container-fluid bg-3 text-center">
+            <h3>Why you should choose Log finder?</h3>
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>Speed</p>
+                    <img src="http://www.sunny-cat.ru/datas/users/1-pomet_d006.jpg" width="200" height="150">
+                </div>
+                <div class="col-sm-4">
+                    <p>Modesty</p>
+                    <img src="https://warhammergames.ru/_pu/3/54587919.jpg" width="200" height="150">
+                </div>
+                <div class="col-sm-4">
+                    <p>Quality</p>
+                    <img src="https://versiya.info/uploads/posts/2019-01/1547379513_vazov.jpeg" width="200" height="150">
+                </div>
+            </div>
+        </div>
+            <!--контакты, футер-->
+        </div>
+        <div id="footer" class="panel-footer">
+            <div class="container-fluid bg-grey">
+                <h2 class="text-center">CONTACT</h2>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <p><span class="glyphicon glyphicon-map-marker"></span> St. Petersburg, RU</p>
+                        <p><span class="glyphicon glyphicon-phone"></span> +7-981-956-30-75</p>
+                        <p><span class="glyphicon glyphicon-envelope"></span> vologdin2424@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script th:src="@{/js/jquery-3.3.1.js}"></script>
+<script th:src="@{/js/index.js}"></script>
+</body>
+</html>

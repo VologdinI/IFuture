@@ -1,0 +1,121 @@
+*, html {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+body, form, ul, li, p, h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: rgba(12, 170, 26, 0.64);
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/**
+ * Tree Table CSS
+**/
+ .table-tree {
+    display: block;
+    padding: 30px 0 0 30px;
+}
+li {
+    display: block;
+    position: relative;
+}
+li label {
+    background: url(folder-horizontal.png) 15px 1px no-repeat;
+    cursor: pointer;
+    display: block;
+    padding-left: 37px;
+    width: 100%;
+}
+li input {
+    position: absolute;
+    left: 0;
+    margin-left: 0;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+    height: 1em;
+    width: 1em;
+    top: 0;
+}
+li input + ul {
+    background: url(toggle-small-expand.png) -3px -1px no-repeat;
+    margin: -0.938em 0 0 0;
+    height: 1em;
+    width: 1em;
+}
+li input:checked + ul {
+    background: url(toggle-small.png) 41px 4px no-repeat;
+    display: block;
+    margin: -1.25em 0 0 -44px;
+    padding: 1.25em 0 0 80px;
+    height: auto;
+    width: 100%;
+}
+li.file {
+    background: url(document.png) 0 0 no-repeat;
+            color: #fff;
+            padding-left: 21px;
+    /* margin-left: -1px !important; */
+}
+li.fileGreen {
+    background: url(documentGreen.png) 0 0 no-repeat;
+    color: #fff;
+    padding-left: 21px;
+}
+li input + ul > li {
+    display: none;
+    margin-left: -14px !important;
+    padding-left: 1px;
+}
+li input:checked + ul > li {
+    display: block;
+    margin: 0 0 0.125em;
+}
+li input:checked + ul > li:last-child {
+    margin: 0 0 0.063em;
+    /* 1px */
+}
+span#errorMessage{
+    background-color: #20fa34;
+    color: rgba(220, 10, 6, 0.91);
+}
+#divText{
+    position: absolute;
+    top: 200px;
+    left: 600px;
+    resize: none;
+}
+#divTabFolder{
+    width  : 400px;
+    height : 50px;
+}
+textarea{
+    position: relative;
+    top: 30px;
+    resize: none;
+    width  : 500px;
+    height : 200px;
+    padding: 5px;
+}
+
+#load{
+    visibility: hidden;
+}
+div#divForm{
+    width  : 400px;
+    height : 200px;
+}
+div#footer{
+    background: #adb5bd;
+}
+div#header{
+    background: #8772bd;
+    font-family: Gill Sans;
+}
